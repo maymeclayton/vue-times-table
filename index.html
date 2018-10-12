@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>let the good "times" roll</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" type="text/css">
+
+  </head>
+  <body class="container">
+
+  <h1 class="mt-5 mb-5 font-weight-bold"> Multiplication Station </h1>
+
+  <div id="app">
+
+      <div class="form-group font-weight-bold">
+        <label for="rows"> Enter Row Number Here: </label>
+          <input type="number" class="form-control" v-model.number="rowInput" id="rows">
+      </div>
+
+      <div class="form-group font-weight-bold">
+        <label for="cols"> Enter Column Number Here: </label>
+          <input type="number" class="form-control" v-model.number="colInput" id="cols">
+      </div>
+
+      <table>
+        <table class="table">
+          <thead>
+            <tr class="font-weight-bold bg-white">
+              <th>X</th>
+              <th v-for="column in colInput"> {{ column }}</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr v-for="row in rowInput" class="font-weight-bold">
+              <th>{{ row }}</th>
+              <td v-for="column in colInput"> {{ row * column }}</td>
+            </tr>
+      </table>
+
+  </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="main.js"></script>
+
+  </body>
+</html>
